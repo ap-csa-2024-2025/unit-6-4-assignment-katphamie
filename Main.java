@@ -4,14 +4,14 @@ public class Main
 {
   public static void main(String[] args)
   {
-    // Create some arrays here to test your methods
-    
+    int[] arr = {3,4,5,6,3,3,6,3,4};
+
   }
 
   public static int countLength(String[] arr, int targetLength)
   {
     int counter = 0;
-    for (i = 0; i < arr.length; i++)
+    for (int i=0;i<arr.length; i++)
     {
       if (arr[i].length == targetLength)
       {
@@ -37,10 +37,10 @@ public class Main
 
   public static boolean hasDuplicates(int[] arr)
   {
-    for (i=0; i < arr.length; i++)
+    for (int i=0; i< arr.length; i++)
     {
       int elem = arr[i];
-      for (j = i; j < arr.length; j++)
+      for (int j=i+1;j<arr.length;j++)
       {
         if (arr[j] == elem)
         {
@@ -51,9 +51,27 @@ public class Main
     return false;
   }
 
-  public static String findMode(String[] arr)
+  public static int findMode(int[] arr)
   {
-    // replace with your code
-    return null;
+    int max = 0;
+    int count = 0;
+    int mode = arr[0];
+    for (int i=0; arr.length; i++)
+    {
+      int target = arr[i];
+      for (j=0;j < arr.length; j++)
+      {
+        if (arr[j] ==arr[i])
+        {
+          count++;
+        }
+        if (count > max)
+        {
+          max = count;
+          mode = arr[i];
+        }
+      }
+    }
+    return mode;
   }
 }
